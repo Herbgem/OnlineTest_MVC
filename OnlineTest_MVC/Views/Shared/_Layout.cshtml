@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+            @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+    <header id="HeaderDefault">
+        <div id="navbar">
+            <div id="nav-belt">
+                <img src="@Url.Content("~/Image/ImgHeader2.jpg")" style="height:100px; width:100%" />
+            </div>
+            <div id="nav-main">
+
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a id="hlHome" href="~/Home.aspx">Home</a></li>
+                            <li id="liLogin"><a id="hlLogin" href="~/Login.aspx">Login</a></li>
+                            <li id="liRegister"><a id="hlRegister" href="~/Register.aspx" >Register</a></li>
+
+
+                            <li class="dropdown" id="UserOPS">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">User OPS <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="UsersDetails.aspx">View users' details</a></li>
+                                    <li><a href="ViewTestResults.aspx">View test Results</a></li>
+                                    <li><a href="UserTests.aspx">View user tests</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+
+                            <li><asp:HyperLink ID="hlAboutUs"  Text="About Us" /></li>
+
+                            <li class="dropdown" id="TestOPS"  >
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Test OPS <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="Subjects.aspx">View users' details</a></li>
+                                    <li><a href="TestPaper.aspx">View test Results</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">One more separated link</a></li>
+                                </ul>
+                            </li>
+
+
+                        </ul>
+
+
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown" id="ddTheme">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Theme<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu"></ul>
+                            </li>
+                            <li>
+                                <asp:LinkButton ID="lnkLogOut1"   OnClick="lnkLogOut1_Click" Text="Log out" />
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
